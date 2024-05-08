@@ -1,0 +1,151 @@
+
+class HomeActivity extends StatelessWidget{
+   HomeActivity({super.key});
+
+  var MyItems = [
+    {"img":"https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80","title":"Sazid"},
+    {"img":"https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80","title":"arefin"},
+    {"img":"https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80","title":"Islam"},
+    {"img":"https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80","title":"arif"},
+    {"img":"https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80","title":"jahid"},
+    {"img":"https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80","title":"montu"},
+    {"img":"https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80","title":"rasel"},
+  ];
+
+  MySnackBar(massage,context){
+    return ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(massage))
+    );
+  }
+
+  MyAlartDialog(context){
+    return showDialog(
+        context: context,
+        builder: (BuildContext context){
+          return Expanded(
+              child: AlertDialog(
+                title: Text("Alart!"),
+                content: Text("Do you want to Delete? "),
+                actions: [
+                  TextButton(onPressed: (){
+                    MySnackBar("Delete Success", context);
+                    Navigator.of(context).pop();
+                  }, child: Text("Agree")),
+                  TextButton(onPressed: (){
+                    Navigator.of(context).pop();
+                  }, child: Text("Cancel"))
+                ],
+              )
+          );
+        }
+    );
+  }
+
+
+
+
+
+
+  @override
+  Widget build(BuildContext context) {
+
+    ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+      padding: EdgeInsets.all(20),
+      backgroundColor: Colors.orange,
+      foregroundColor: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(7))
+      )
+    );
+
+    return DefaultTabController(
+        length: 5,
+        child : Scaffold(
+          appBar: AppBar(
+            title: Text("My App"),
+            bottom: TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.home),text: "home",),
+                Tab(icon: Icon(Icons.notification_important),),
+                Tab(icon: Icon(Icons.search),),
+                Tab(icon: Icon(Icons.settings),),
+                Tab(icon: Icon(Icons.person),),
+
+              ],
+
+            ),
+          ),
+          body: TabBarView(
+              children: [
+               HomeFragment(),
+                NotificationFragment(),
+                SearchFragment(),
+               SettingFragment(),
+               ProfileFragment(),
+
+
+              ]
+          ),
+        )
+    );
+  }
+
+}
+class PageOneActivity extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Activity one"),
+      ),
+      body: Center(
+        child: ElevatedButton(onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>PageTwoActivity()));
+        }, child: Text("Go activity two")),
+      ),
+    );
+  }
+
+}
+class PageTwoActivity extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Activity two"),
+      ),
+    );
+  }
+
+}
+
+working with another fragment Which is Home Fragment:
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:practice_flutter/main.dart';
+
+class HomeFragment extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          ElevatedButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>PageOneActivity()));
+
+          }, child: Text("Go Activity One")),
+          ElevatedButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>PageTwoActivity()));
+
+          }, child: Text("Go Activity Two")),
+
+        ],
+      ),
+    );
+  }

@@ -1,0 +1,50 @@
+ return DefaultTabController(
+        length: 5,
+        child : Scaffold(
+          appBar: AppBar(
+            title: Text("My App"),
+            bottom: TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.home),text: "home",),
+                Tab(icon: Icon(Icons.notification_important),),
+                Tab(icon: Icon(Icons.search),),
+                Tab(icon: Icon(Icons.settings),),
+                Tab(icon: Icon(Icons.person),),
+
+              ],
+
+            ),
+          ),
+          body: TabBarView(
+              children: [
+               HomeFragment(),
+                NotificationFragment(),
+                SearchFragment(),
+               SettingFragment(),
+               ProfileFragment(),
+
+
+              ]
+          ),
+        )
+    );
+
+Here we also create 5 dart file for TabBarView. 
+
+Here is a example for HomeFragment:
+
+import 'package:flutter/cupertino.dart';
+
+class HomeFragment extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      child: Center(
+        child: Text("This is my Home Fragment"),
+      ),
+    );
+  }
+  
+}
+

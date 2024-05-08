@@ -1,0 +1,8 @@
+ ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+      padding: EdgeInsets.all(20),
+      backgroundColor: Colors.orange,
+      foregroundColor: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(7))
+      )
+    );

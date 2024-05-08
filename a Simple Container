@@ -1,0 +1,18 @@
+ return Scaffold(
+      body: Container(
+        height: 300,
+        width: 300,
+        alignment: Alignment.center,
+        child: Text("Sazid"),
+        margin: EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.blue,
+          shape: BoxShape.circle,
+          border:Border.all(
+            color: Colors.green,
+            width: 4
+          ),
+        ),
+
+      ),
+    );

@@ -1,0 +1,43 @@
+class HomeActivity extends StatelessWidget {
+  const HomeActivity({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Widget Practice"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextFormField(
+              keyboardType: TextInputType.emailAddress,
+              cursorColor: Colors.red,
+              enabled: true,
+              decoration: InputDecoration(
+                hintText: "E-mail",
+                labelText: "E-mail",
+                prefixIcon: Icon(Icons.email),
+                suffixIcon: Icon(Icons.visibility_off),
+                hintStyle: TextStyle(fontSize: 15,color: Colors.grey),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.red),
+                  borderRadius: BorderRadius.circular(15)
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
+                  borderSide: BorderSide(color: Colors.green)
+                ),
+              ),
+              onChanged: (value){
+                print(value);
+              },
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}

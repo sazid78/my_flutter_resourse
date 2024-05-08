@@ -1,0 +1,8 @@
+Center(
+        child: LinearProgressIndicator(
+          color: Colors.orangeAccent,
+          minHeight: 5,
+          
+          backgroundColor: Colors.purpleAccent,
+        ),
+      )

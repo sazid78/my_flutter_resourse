@@ -1,0 +1,31 @@
+class HomeActivity extends StatelessWidget{
+  const HomeActivity({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      body: GridView.count(
+          crossAxisCount: 2,
+        mainAxisSpacing: 50,
+        crossAxisSpacing: 10,
+
+        children: [
+          Container(
+            color: Colors.green,
+          ),
+          Container(
+            color: Colors.green,
+          ),
+          Container(
+            color: Colors.green,
+          ),Container(
+            color: Colors.green,
+          ),Container(
+      
+        ],
+      ),
+    );
+  }
+
+}

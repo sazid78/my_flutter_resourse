@@ -1,0 +1,22 @@
+ drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              padding: EdgeInsets.all(0),
+                child: UserAccountsDrawerHeader(
+                  decoration: BoxDecoration(color: Colors.orange),
+                  accountName: Text("Sazid Arefin"),
+                  accountEmail: Text("sazidarefin2000@gmial.com"),
+                )
+            ),
+            ListTile(leading: Icon(Icons.home),title: Text("Home"),onTap: (){
+              MySnackBar("This is me", context);
+            }  ,),
+            ListTile(leading: Icon(Icons.contact_page),title: Text("Contact")),
+            ListTile(leading: Icon(Icons.person),title: Text("Profile")),
+            ListTile(leading: Icon(Icons.email),title: Text("Email")),
+            ListTile(leading: Icon(Icons.phone),title: Text("Phone")),
+
+          ],
+        ),
+      )

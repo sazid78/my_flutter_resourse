@@ -1,0 +1,35 @@
+class _HomeActivityState extends State<HomeActivity> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Learn Row And Column"),
+
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            leading: Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(shape: BoxShape.circle,color: Colors.green),
+            ),
+            title: Text("Sazid"),
+            trailing: Icon(Icons.add_call),
+          ),
+          ListTile(
+            leading: Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(shape: BoxShape.circle,color: Colors.green),
+            ),
+            title: Text("Sazid"),
+            trailing: Icon(Icons.add_call),
+          ),
+          
+        ],
+      )
+    );
+  }
+}

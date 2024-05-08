@@ -1,0 +1,14 @@
+floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Get.snackbar(
+            "Title",
+            "Sazid Arefin",
+            backgroundColor: Colors.pink,
+            colorText: Colors.white,
+            snackPosition: SnackPosition.BOTTOM,
+            icon: Icon(Icons.add),
+            onTap: (snap) {},
+          );
+        },
+
+      ),

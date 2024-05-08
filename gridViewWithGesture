@@ -1,0 +1,18 @@
+GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 1
+        ),
+        itemCount: MyItems.length,
+        itemBuilder: (context,index){
+          return GestureDetector(
+            onTap: (){},
+            child: Container(
+              margin: EdgeInsets.all(10),
+              width: double.infinity,
+              height: 200,
+              child: Image.network(MyItems[index]["img"]!,fit: BoxFit.fitWidth,),
+            ),
+          );
+        },
+      ),

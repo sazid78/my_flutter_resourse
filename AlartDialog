@@ -1,0 +1,22 @@
+MyAlartDialog(context){
+    return showDialog(
+        context: context,
+        builder: (BuildContext context){
+          return Expanded(
+              child: AlertDialog(
+                title: Text("Alart!"),
+                content: Text("Do you want to Delete? "),
+                actions: [
+                  TextButton(onPressed: (){
+                    MySnackBar("Delete Success", context);
+                    Navigator.of(context).pop();
+                  }, child: Text("Agree")),
+                  TextButton(onPressed: (){
+                    Navigator.of(context).pop();
+                  }, child: Text("Cancel"))
+                ],
+              )
+          );
+        }
+    );
+  }

@@ -1,0 +1,7 @@
+ FractionallySizedBox(
+          widthFactor: .5,
+          heightFactor: .3,
+          child: Container(
+            color: Colors.orangeAccent,
+          ),
+        ),

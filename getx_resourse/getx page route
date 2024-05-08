@@ -1,0 +1,22 @@
+Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextButton(onPressed: (){
+            Get.to(PageThree());
+            // Navigator.push(context, MaterialPageRoute(builder: (context) => PageThree()));
+          }, child: Center(child: Text("Page one")))
+        ],
+      ),
+
+
+for pop:
+
+Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextButton(onPressed: (){
+            Get.back();
+          }, child: Center(child: Text("Go Back"))),
+          Text("This is page one")
+        ],
+      ),

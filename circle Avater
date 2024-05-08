@@ -1,0 +1,21 @@
+Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Widget Practice"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Divider(color: Colors.green, thickness: 2,),
+          SizedBox(height: 50,),
+          Center(
+            child: CircleAvatar(
+              radius: 100,
+              backgroundColor: Colors.green,
+              backgroundImage: NetworkImage("https://images.pexels.com/photos/6652208/pexels-photo-6652208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+            ),
+          )
+        ],
+      ),
+    );
+  }

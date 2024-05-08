@@ -1,0 +1,33 @@
+class HomeActivity extends StatelessWidget {
+  const HomeActivity({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Widget Practice"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            child: ListView.builder(
+              itemCount: 100,
+                itemBuilder: (context,index){
+                  return ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.green,
+                      backgroundImage: NetworkImage("https://images.pexels.com/photos/6652208/pexels-photo-6652208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                    ),
+                    title: Text("Sazid"),
+                    subtitle: Text("This is\n my name"),
+                    trailing: Text("3.15 PM"),
+                  );
+                },
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}

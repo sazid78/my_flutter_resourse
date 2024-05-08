@@ -1,0 +1,8 @@
+Center(
+        child: Container(
+          height: Get.height * .2,
+          width: Get.width * .2,
+          child: Center(child: Text("Page")),
+          color: Colors.amber,
+        ),
+      )

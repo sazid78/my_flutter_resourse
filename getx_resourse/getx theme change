@@ -1,0 +1,34 @@
+Card(
+            child:ListTile(
+              title: Text("Change Theme"),
+              subtitle: Text("Getx bottom sheet"),
+              onTap: (){
+                Get.bottomSheet(
+                  Container(
+                    child: Column(
+                     children: [
+                       ListTile(
+                         title: Text("Light Theme"),
+                         leading: Icon(Icons.light_mode),
+                         onTap: (){
+                           Get.changeTheme(ThemeData.light());
+                         },
+                       ),
+                       ListTile(
+                         title: Text("Dark Theme"),
+                         leading: Icon(Icons.dark_mode),
+                         onTap: (){
+                           Get.changeTheme(ThemeData.dark());
+                         },
+                       )
+                     ],
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.greenAccent.shade100,
+                      borderRadius: BorderRadius.circular(20)
+                    ),
+                  )
+                );
+              },
+            ),
+          )
